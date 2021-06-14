@@ -7,19 +7,18 @@ function App() {
   });
 
   function getName(event) {
-    let newValue = event.target.value;
-    let targetName = event.target.name;
+    let { name, value } = event.target;
 
     setName((prevValue) => {
-      if (targetName === "fName") {
+      if (name === "fName") {
         return {
-          fName: newValue,
+          fName: value,
           lName: prevValue.fName
         };
-      } else if (targetName === "lName") {
+      } else if (name === "lName") {
         return {
           fName: prevValue.fName,
-          lName: newValue
+          lName: value
         };
       }
     });
